@@ -28,7 +28,7 @@ public class SwiftFacebookToolAnalyticsPlugin: NSObject, FlutterPlugin {
         let eventName = arguments["name"] as! String
         let parameters = arguments["parameters"] as? [String: Any] ?? [String: Any]()
         
-        // Analytics.logEvent(eventName, parameters: parameters)
+        AppEvents.logEvent(AppEvents.Name(eventName), parameters: parameters)
         
         result(nil)
     }
@@ -39,11 +39,9 @@ public class SwiftFacebookToolAnalyticsPlugin: NSObject, FlutterPlugin {
         let price = arguments["price"] as! Double
         let productID = arguments["product_id"] as! String
         
-        // Analytics.logEvent(AnalyticsEventPurchase, parameters: [
-        //     AnalyticsParameterCurrency: currency,
-        //     AnalyticsParameterValue: price,
-        //     "productID": productID
-        // ])
+        AppEvents.logPurchase(price,
+                              currency: currency,
+                              parameters: ["productID": productID])
         
         result(nil)
     }
