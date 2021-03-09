@@ -1,0 +1,21 @@
+name: facebook_tool_analytics
+description: Flutter Plugin for Facebook Analytics
+version: 0.0.1
+homepage: 'https://github.com/StormXX/facebook_tool_analytics'
+environment:
+  sdk: '>=2.7.0 <3.0.0'
+  flutter: '>=1.20.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.stormxx.facebook_tool_analytics
+        pluginClass: FacebookToolAnalyticsPlugin
+      ios:
+        pluginClass: FacebookToolAnalyticsPlugin
