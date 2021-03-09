@@ -17,6 +17,7 @@ public class SwiftFacebookToolAnalyticsPlugin: NSObject, FlutterPlugin {
             break
         case "logPurchase":
             handleLogPurcahse(call, result: result)
+            break
         default:
             result(FlutterMethodNotImplemented)
         }
