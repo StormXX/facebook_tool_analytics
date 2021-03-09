@@ -23,27 +23,27 @@ public class SwiftFacebookToolAnalyticsPlugin: NSObject, FlutterPlugin {
         }
     }
     
-    private handleLogEvent(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    private func handleLogEvent(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? [String: Any] ?? [String: Any]()
         let eventName = arguments["name"] as! String
         let parameters = arguments["parameters"] as? [String: Any] ?? [String: Any]()
         
-        Analytics.logEvent(eventName, parameters: parameters)
+        // Analytics.logEvent(eventName, parameters: parameters)
         
         result(nil)
     }
     
-    private handleLogPurcahse(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    private func handleLogPurcahse(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? [String: Any] ?? [String: Any]()
         let currency = arguments["currency"] as! String
         let price = arguments["price"] as! Double
         let productID = arguments["product_id"] as! String
         
-        Analytics.logEvent(AnalyticsEventPurchase, parameters: [
-            AnalyticsParameterCurrency: currency,
-            AnalyticsParameterValue: price,
-            "productID": productID
-        ])
+        // Analytics.logEvent(AnalyticsEventPurchase, parameters: [
+        //     AnalyticsParameterCurrency: currency,
+        //     AnalyticsParameterValue: price,
+        //     "productID": productID
+        // ])
         
         result(nil)
     }
